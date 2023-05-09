@@ -37,6 +37,8 @@
 						</div>
 						<button type="submit" class="btn btn-primary">Submit</button>
 					</form>
+					<div class="mt-3">Don't have an account? <a href="signup.jsp">Register Now!</a></div>
+					
 				</div>
 			</div>
 		</div>
