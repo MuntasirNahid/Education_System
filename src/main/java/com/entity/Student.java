@@ -9,6 +9,10 @@ public class Student {
 	
 	
 	
+	public Student() {
+		super();
+
+	}
 	public Student(String fullName, String email, String password) {
 		super();
 		this.fullName = fullName;
