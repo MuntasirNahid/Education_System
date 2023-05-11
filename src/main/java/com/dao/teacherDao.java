@@ -48,7 +48,7 @@ public class teacherDao {
 		teacher d = null;
 		try {
 
-			String sql = "select   from teacher order by id desc";
+			String sql = "select  * from teacher order by id desc";
 			PreparedStatement ps = conn.prepareStatement(sql);
 
 			ResultSet rs = ps.executeQuery();
@@ -77,7 +77,7 @@ public class teacherDao {
 		teacher d = null;
 		try {
 
-			String sql = "select   from teacher where id=?";
+			String sql = "select *  from teacher where id=?";
 
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, id);

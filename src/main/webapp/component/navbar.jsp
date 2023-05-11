@@ -25,7 +25,7 @@
 							class="fa-solid fa-person-chalkboard"></i>TEACHER</a></li>
 
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="#"><i class="fa-solid fa-book-open"></i>COURSES</a></li>
+						aria-current="page" href="course_enrollment.jsp"><i class="fa-solid fa-book-open"></i>COURSES</a></li>
 
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="student_login.jsp"><i

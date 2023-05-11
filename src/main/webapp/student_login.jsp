@@ -61,7 +61,7 @@
 							</div>
 							<button type="submit" class="btn bg-success text-white col-md-12">Login</button>
 						</form>
-						<br>Don't have an acount?<a href="signup.jsp"
+						<br>Don't have an account?<a href="signup.jsp"
 							class="text-decoration-none">create one</a>
 
 					</div>
