@@ -5,6 +5,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page isELIgnored="false"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,9 +20,9 @@
 </head>
 <body>
 	<%@include file="navbar.jsp"%>
-	
-	
-	 <c:if test="${empty teacherObj }">
+
+
+	<c:if test="${empty teacherObj }">
 		<c:redirect url="../teacher_login.jsp"></c:redirect>
 	</c:if>
 
@@ -29,7 +30,7 @@
 
 	<p class="text-center fs-3">Teacher Dashboard</p>
 
-	<%-- <%
+	<%
 	teacher d = (teacher) session.getAttribute("teacherObj");
 	teacherDao dao = new teacherDao(DBConnect.getConn());
 	%>
@@ -40,7 +41,7 @@
 					<div class="card-body text-center text-success">
 						<i class="fas fa-user-md fa-3x"></i><br>
 						<p class="fs-4 text-center">
-							teacher <br><%=dao.countteacher()%>
+							Total Teacher <br>12
 						</p>
 					</div>
 				</div>
@@ -53,13 +54,13 @@
 						<i class="far fa-calendar-check fa-3x"></i><br>
 						<p class="fs-4 text-center">
 							Total Appointment <br>
-							<%=dao.countAppointmentByDocotrId(d.getId())%>
+							10
 						</p>
 					</div>
 				</div>
 			</div>
 
 		</div>
-	</div>  --%>
+	</div>
 </body>
 </html>

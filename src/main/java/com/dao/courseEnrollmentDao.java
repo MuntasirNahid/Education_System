@@ -8,12 +8,11 @@ import java.util.List;
 
 import com.entity.course_enrollment;
 
-
 public class courseEnrollmentDao {
 
 	private Connection conn;
 
-	public courseEnrollmentDao (Connection conn) {
+	public courseEnrollmentDao(Connection conn) {
 		super();
 		this.conn = conn;
 	}
@@ -24,9 +23,9 @@ public class courseEnrollmentDao {
 		try {
 
 			String sql = "insert into course_enrollment(student_id,fullName,gender,age,class_start_date,email,phNo,subject_id,teacher_id,expectation,status) values(?,?,?,?,?,?,?,?,?,?,?)";
-			
+
 			PreparedStatement ps = conn.prepareStatement(sql);
-		
+
 			ps.setInt(1, ap.getStudentId());
 			ps.setString(2, ap.getFullName());
 			ps.setString(3, ap.getGender());
@@ -50,4 +49,78 @@ public class courseEnrollmentDao {
 
 		return f;
 	}
+
+	public List<course_enrollment> getAllCoursesByLoginStudent(int studentId) {
+		List<course_enrollment> list = new ArrayList<course_enrollment>();
+		course_enrollment ap = null;
+
+		try {
+
+			String sql = "select * from course_enrollment where student_id=?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, studentId);
+
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				ap = new course_enrollment();
+				ap.setId(rs.getInt(1));
+				ap.setStudentId(rs.getInt(2));
+				ap.setFullName(rs.getString(3));
+				ap.setGender(rs.getString(4));
+				ap.setAge(rs.getString(5));
+				ap.setClass_start_date(rs.getString(6));
+				ap.setEmail(rs.getString(7));
+				ap.setPhNo(rs.getString(8));
+				ap.setSubjectId(rs.getInt(9));
+				ap.setTeacherId(rs.getInt(10));
+				ap.setExpectation(rs.getString(11));
+				ap.setStatus(rs.getString(12));
+				list.add(ap);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+	
+	public List<course_enrollment> getAllCourseByTeacherLogin(int teacherId) {
+		List<course_enrollment> list = new ArrayList<course_enrollment>();
+	
+		course_enrollment ap = null;
+
+		try {
+
+			String sql = "select * from course_enrollment where teacher_id=?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, teacherId);
+
+			ResultSet rs = ps.executeQuery();
+		
+			while (rs.next()) {
+				ap = new course_enrollment();
+				ap.setId(rs.getInt(1));
+				ap.setStudentId(rs.getInt(2));
+				ap.setFullName(rs.getString(3));
+				ap.setGender(rs.getString(4));
+				ap.setAge(rs.getString(5));
+				ap.setClass_start_date(rs.getString(6));
+				ap.setEmail(rs.getString(7));
+				ap.setPhNo(rs.getString(8));
+				ap.setSubjectId(rs.getInt(9));
+				ap.setTeacherId(rs.getInt(10));
+				ap.setExpectation(rs.getString(11));
+				ap.setStatus(rs.getString(12));
+				list.add(ap);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+	
+
 }
