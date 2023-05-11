@@ -38,7 +38,7 @@
 							<h4 class="text-center text-danger fs-5">${errorMsg}</h4>
 							<c:remove var="errorMsg" scope="session" />
 						</c:if>
-						
+
 						<form action="adminLogin" method="post">
 							<div class="form-group">
 								<label>Email address</label> <input type="email"
@@ -51,7 +51,7 @@
 									type="password" class="form-control" id="exampleInputPassword1"
 									placeholder="Password" name="password">
 							</div>
-
+							<br>
 							<button type="submit" class="btn bg-success text-white col-md-12">Login</button>
 						</form>
 
