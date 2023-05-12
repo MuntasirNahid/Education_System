@@ -70,9 +70,53 @@ public class studentDao {
 		return u;
 	}
 	
-	
+	public boolean checkOldPassword(int studentId, String oldPassword) {
+		boolean f = false;
+
+		try {
+			String sql = "select * from student_details where id=? and password=?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, studentId);
+			ps.setString(2, oldPassword);
+
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				f = true;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return f;
+	}
+
+	public boolean changePassword(int StudentId, String newPassword) {
+		boolean f = false;
+
+		try {
+			String sql = "update student_details set password=? where id=?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, newPassword);
+			ps.setInt(2, StudentId);
+
+			int i = ps.executeUpdate();
+			if (i == 1) {
+				f = true;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return f;
+	}
 
 }
+	
+	
+
+
 	
 
 

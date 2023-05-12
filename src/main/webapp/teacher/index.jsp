@@ -41,7 +41,7 @@
 					<div class="card-body text-center text-success">
 						<i class="fas fa-user-md fa-3x"></i><br>
 						<p class="fs-4 text-center">
-							Total Teacher <br>12
+							Total Teacher <br><%=dao.countTeacher() %>
 						</p>
 					</div>
 				</div>
@@ -53,8 +53,8 @@
 					<div class="card-body text-center text-success">
 						<i class="far fa-calendar-check fa-3x"></i><br>
 						<p class="fs-4 text-center">
-							Total Appointment <br>
-							10
+							My Total Student <br>
+							<%=dao.countCourseEnrollmentByTeacherId(d.getId()) %>
 						</p>
 					</div>
 				</div>

@@ -1,10 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@page import="com.entity.teacher"%>
+<%@page import="com.db.DBConnect"%>
+<%@page import="com.dao.courseEnrollmentDao"%>
+<%@page import="com.dao.teacherDao"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Admin Home Page</title>
 <%@include file="../component/allcss.jsp"%>
 
 <style type="text/css">
@@ -34,9 +38,9 @@
 			<c:remove var="succMsg" scope="session" />
 		</c:if>
 
-		<%-- 		<%
-		DoctorDao dao = new DoctorDao(DBConnect.getConn());
-		%> --%>
+			<%
+		teacherDao dao = new teacherDao(DBConnect.getConn());
+		%> 
 
 		<!-- 	Doctor ->Teacher
 		
@@ -53,7 +57,7 @@
 					<div class="card-body text-center text-success">
 						<i class="fas fa-user-md fa-3x"></i><br>
 						<p class="fs-4 text-center">
-							Teacher <br>5
+							Teacher <br><%=dao.countTeacher() %>
 						</p>
 					</div>
 				</div>
@@ -66,7 +70,8 @@
 					<div class="card-body text-center text-success">
 						<i class="fas fa-user-circle fa-3x"></i><br>
 						<p class="fs-4 text-center">
-							Student <br>67
+							Student <br><%=dao.countStudent()
+							%>
 						</p>
 					</div>
 				</div>
@@ -77,7 +82,7 @@
 					<div class="card-body text-center text-success">
 						<i class="far fa-calendar-check fa-3x"></i><br>
 						<p class="fs-4 text-center">
-							Student Who Took Course <br>34
+							Student Who Took Course <br><%=dao.countCourseEnrollment() %>
 						</p>
 					</div>
 				</div>
@@ -90,7 +95,7 @@
 					<div class="card-body text-center text-success">
 						<i class="far fa-calendar-check fa-3x"></i><br>
 						<p class="fs-4 text-center">
-							Course <br>10
+							Course <br><%=dao.countCourses() %>
 						</p>
 					</div>
 				</div>

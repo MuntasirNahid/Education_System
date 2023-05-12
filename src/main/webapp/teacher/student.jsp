@@ -90,7 +90,7 @@
 										 <%
 										 } else {
 										 %> 
-										 <a href="#" class="btn btn-success btn-sm disabled">Comment</a> 
+										 <a href="comment.jsp?id = <%=ap.getId() %>" class="btn btn-success btn-sm disabled">Comment</a> 
 										 <%
 										 }
 										 %>
