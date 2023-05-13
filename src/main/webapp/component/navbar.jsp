@@ -13,6 +13,7 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
 <!-- not logged in -->
 
 				<c:if test="${empty userObj }">
@@ -58,6 +59,7 @@
 						</ul>
 					</div>
 				</c:if>
+
 
 
 				<!--   <li class="nav-item dropdown">
