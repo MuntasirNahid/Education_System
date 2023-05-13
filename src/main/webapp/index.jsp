@@ -1,17 +1,28 @@
+<%@page import= "com.db.DBConnect" %>
+<%@page import= "java.sql.Connection" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 	
 <!DOCTYPE html>
+
+
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Index Page</title>
 
 <%@include file="component/allcss.jsp"%>
+<style type="text/css">
+.paint-card {
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+</style>
 
 </head>
 <body>
 	<%@include file="component/navbar.jsp"%>
+
+	
 
 	<div id="carouselExampleIndicators" class="carousel slide"
 		data-bs-ride="carousel">
@@ -51,5 +62,107 @@
 	</div>
 
 
+	<div class="container p-3">
+		<p class="text-center fs-2">Key Features of our Institution</p>
+
+		<div class="row">
+			<div class="col-md-8 p-5">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="card paint-card">
+							<div class="card-body">
+								<p class="fs-5">100% A+ Guarantee</p>
+								<p>Loren ipsum dolar</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="card paint-card">
+							<div class="card-body">
+								<p class="fs-5">Clean Classroom</p>
+								<p>HI hello Bye</p>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="col-md-6 mt-2">
+						<div class="card paint-card">
+							<div class="card-body">
+								<p class="fs-5">Friendly Teachers</p>
+								<p>HI hello Bye</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 mt-2">
+						<div class="card paint-card">
+							<div class="card-body">
+								<p class="fs-5">Higher Studies</p>
+								<p>HI hello Bye</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<img alt="" src="img/boy1.jpg" height="400px">
+			</div>
+		</div>
+	</div>
+
+	<hr>
+
+	<div class="container p-2">
+		<p class="text-center fs-2">Our Team</p>
+
+		<div class="row">
+			<div class="col-md-3 ">
+
+				<div class="card paint-card">
+					<div class="card-body text-center">
+						<img src="img/ron1.jpg" width="250px" height="300px">
+						<p class="fw-bold fs-5">Ronaldo</p>
+						<p class="fs-7">(CEO & Chairman)</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 ">
+
+				<div class="card paint-card">
+					<div class="card-body text-center">
+						<img src="img/ron2.jpg" width="250px" height="300px">
+						<p class="fw-bold fs-5">Ronaldo</p>
+						<p class="fs-7">(CEO & Chairman)</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 ">
+
+				<div class="card paint-card">
+					<div class="card-body text-center">
+						<img src="img/ron3.jpg" width="250px" height="300px">
+						<p class="fw-bold fs-5">Ronaldo</p>
+						<p class="fs-7">(CEO & Chairman)</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 ">
+
+				<div class="card paint-card">
+					<div class="card-body text-center">
+						<img src="img/ron4.jpg" width="250px" height="300px">
+						<p class="fw-bold fs-5">Ronaldo</p>
+						<p class="fs-7">(CEO & Chairman)</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<%@include file="component/footer.jsp"%>
 </body>
 </html>
